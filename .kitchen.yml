@@ -29,11 +29,11 @@ suites:
        sapi:
          fpm:
            module_ini_path: /tmp/
-  - name: system
+  - name: infrastructure
     run_list:
-      - recipe[cop_newrelic::system]
+      - recipe[cop_newrelic::infrastructure]
     attributes:
       newrelic:
-        system:
+        infrastructure:
           install: true
         license: ba3b0fb4b29c4919bfec0fb2f255dfd9e4bdd8f5 # NOTE: fake key

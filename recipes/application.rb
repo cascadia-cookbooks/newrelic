@@ -3,7 +3,7 @@
 # Recipe:: application
 #
 
-include_recipe 'cop_newrelic::package'
+include_recipe 'cop_newrelic::app_deps'
 
 if node['newrelic']['php']['install'] == true
     package 'newrelic-php5' do
