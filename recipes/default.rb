@@ -3,4 +3,4 @@
 # Recipe:: default
 #
 
-# NOTE: intentionally empty, include system or application recipes into your run lists
+# NOTE: intentionally empty, include system or application recipe in run list
