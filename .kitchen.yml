@@ -1,0 +1,27 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu/precise64
+  - name: ubuntu/trusty64
+  - name: ubuntu/xenial64
+  - name: centos/6
+  - name: centos/7
+  - name: debian/wheezy64
+  - name: debian/jessie64
+
+suites:
+  - name: application
+    run_list:
+      - recipe[cop_newrelic::application]
+    attributes:
+  - name: system
+    run_list:
+      - recipe[cop_newrelic::system]
+    attributes:
+      newrelic:
+        license: ba3b0fb4b29c4919bfec0fb2f255dfd9e4bdd8f5

@@ -1,0 +1,23 @@
+# Misc
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+.DS_Store
+nohup.out
+
+# Bundler
+bin/
+.bundle/
+
+# Vagrant
+.vagrant/
+
+# Test Kitchen
+.kitchen/
+.kitchen.local.yml
+
+# Upstream deps
+Berksfile.lock
