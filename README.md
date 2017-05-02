@@ -11,6 +11,8 @@ Include either or both recipes, system or application, to the run_list for a giv
   monitoring to be installed.
 * node['newrelic']['php']['enabled'] = true by default. Enables the application
   daemon to run.
+* node['newrelic']['php']['appname'] = The name of the New Relic application.
+  Not set by default.
 
 ## Tests
 There are kitchen tests.

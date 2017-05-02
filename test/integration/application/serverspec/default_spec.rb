@@ -13,6 +13,7 @@ describe 'cop_newrelic::application' do
     it { should be_mode '644' }
     it { should contain 'newrelic.enabled=true' }
     it { should contain 'newrelic.license = "ba3b0fb4b29c4919bfec0fb2f255dfd9e4bdd8f5"' }
+    it { should contain 'newrelic.appname = "testing.com"' }
   end
 
   describe package('newrelic-php5') do
