@@ -22,6 +22,7 @@ suites:
       newrelic:
         license: ba3b0fb4b29c4919bfec0fb2f255dfd9e4bdd8f5 # NOTE: fake key
         php:
+          install: true
           enabled: true
       php:
        sapi:
@@ -32,4 +33,6 @@ suites:
       - recipe[cop_newrelic::system]
     attributes:
       newrelic:
+        system:
+          install: true
         license: ba3b0fb4b29c4919bfec0fb2f255dfd9e4bdd8f5 # NOTE: fake key
