@@ -46,7 +46,7 @@ when 'rhel'
         path     '/etc/yum.repos.d/newrelic-infra.repo'
         content  "[newrelic-infra]
 name=New Relic Infrastructure
-baseurl=https://download.newrelic.com/infrastructure_agent/linux/yum/el/$releasever/$basearch
+baseurl=https://download.newrelic.com/infrastructure_agent/linux/yum/el/${releasever:0:1}/$basearch
 enabled=1
 gpgcheck=1"
         user     'root'
