@@ -44,9 +44,10 @@ when 'debian'
 when 'rhel'
     file 'install newrelic-infra repo' do
         path     '/etc/yum.repos.d/newrelic-infra.repo'
+        # NOTE: node['platform_version'][0] is the first char of the OS version
         content  "[newrelic-infra]
 name=New Relic Infrastructure
-baseurl=https://download.newrelic.com/infrastructure_agent/linux/yum/el/${releasever:0:1}/$basearch
+baseurl=https://download.newrelic.com/infrastructure_agent/linux/yum/el/#{node['platform_version'][0]}/$basearch
 enabled=1
 gpgcheck=1"
         user     'root'
