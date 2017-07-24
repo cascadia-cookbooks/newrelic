@@ -29,6 +29,7 @@ suites:
        sapi:
          fpm:
            module_ini_path: /tmp/
+           fpm_service_name: networking # NOTE: bogus service
   - name: infrastructure
     run_list:
       - recipe[cop_newrelic::infrastructure]

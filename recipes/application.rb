@@ -33,17 +33,15 @@ if node['newrelic']['php']['install'] == true
         action  :nothing
     end
 
-    if node['php']['sapi']['fpm']['module_ini_path']
-        template "#{node['php']['sapi']['fpm']['module_ini_path']}/newrelic.ini" do
-            source   'newrelic.ini.erb'
-            owner    'root'
-            group    'root'
-            mode     0644
-            notifies :restart, "service[#{node['php']['sapi']['fpm']['fpm_service_name']}]", :delayed
-        end
+    template "#{node['php']['sapi']['fpm']['module_ini_path']}/newrelic.ini" do
+        source   'newrelic.ini.erb'
+        owner    'root'
+        group    'root'
+        mode     0644
+        notifies :restart, "service[#{node['php']['sapi']['fpm']['fpm_service_name']}]", :delayed
     end
 
-    service 'newrelic-daemon' do
-        action [:enable, :start]
+    service node['php']['sapi']['fpm']['fpm_service_name'] do
+        action :nothing
     end
 end
