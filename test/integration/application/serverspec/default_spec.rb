@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe 'cop_newrelic::application' do
   describe file('/etc/newrelic/newrelic.cfg') do
-    it { should be_owned_by 'root' }
-    it { should be_grouped_into 'root' }
-    it { should be_mode '644' }
+    it { should_not exist }
   end
 
   describe file('/tmp/newrelic.ini') do

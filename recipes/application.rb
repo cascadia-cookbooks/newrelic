@@ -23,12 +23,8 @@ if node['newrelic']['php']['install'] == true
         action :delete
     end
 
-    template '/etc/newrelic/newrelic.cfg' do
-        source   'newrelic.cfg.erb'
-        owner    'root'
-        group    'root'
-        mode     0644
-        notifies :restart, 'service[newrelic-daemon]', :delayed
+    file '/etc/newrelic/newrelic.cfg' do
+        action :delete
     end
 
     if node['php']['sapi']['fpm']['module_ini_path']
