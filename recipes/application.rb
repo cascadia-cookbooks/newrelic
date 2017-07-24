@@ -24,7 +24,13 @@ if node['newrelic']['php']['install'] == true
     end
 
     file '/etc/newrelic/newrelic.cfg' do
-        action :delete
+        action   :delete
+        notifies :run, 'execute[kill any running daemons linking old config]', :immediately
+    end
+
+    execute 'kill any running daemons linking old config' do
+        command 'killall newrelic-daemon'
+        action  :nothing
     end
 
     if node['php']['sapi']['fpm']['module_ini_path']
