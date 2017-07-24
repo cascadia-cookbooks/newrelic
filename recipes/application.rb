@@ -39,7 +39,7 @@ if node['newrelic']['php']['install'] == true
             owner    'root'
             group    'root'
             mode     0644
-            notifies :restart, 'service[newrelic-daemon]', :delayed
+            notifies :restart, "service[#{node['php']['sapi']['fpm']['fpm_service_name']}]", :delayed
         end
     end
 
