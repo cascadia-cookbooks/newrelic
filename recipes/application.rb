@@ -41,6 +41,10 @@ if node['newrelic']['php']['install'] == true
         notifies :restart, "service[#{node['php']['sapi']['fpm']['fpm_service_name']}]", :delayed
     end
 
+    service 'newrelic-daemon' do
+        action :disable
+    end
+
     service node['php']['sapi']['fpm']['fpm_service_name'] do
         action :nothing
     end
