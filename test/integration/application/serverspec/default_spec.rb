@@ -19,7 +19,7 @@ describe 'cop_newrelic::application' do
   end
 
   describe command('newrelic-daemon -v') do
-    its(:stdout) { should match /daemon version 7.2.*/ }
+    its(:stdout) { should match /daemon version 7.*/ }
   end
 
   it 'the newrelic daemon is enabled' do
